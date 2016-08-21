@@ -23,6 +23,7 @@ class CallbacksInfo extends React.Component {
             {this.props.callbacksValues.sort(this.callbacksValues).map((callback) =>
               <li key = {callback.id}  className = {this.statusFormatter(callback.status)}>
                 {callback.name}
+                <span className="badge">{callback.retries}</span>
               </li>)}
             </ul>
           </div>

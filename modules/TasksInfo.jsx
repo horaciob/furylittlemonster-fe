@@ -1,6 +1,5 @@
 import React from 'react';
-import TimerMixin from 'react-timer-mixin';
-import { Link } from 'react-router'
+
 
 class TasksInfo extends React.Component {
   statusFormatter(status_name){
@@ -14,8 +13,6 @@ class TasksInfo extends React.Component {
     return statusStyles[status_name]
   }
   orderTasks(a,b){
-    console.log(a);
-    console.log(b);
     if (a.order < b.order){
       return -1;
     }

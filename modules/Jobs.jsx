@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import TasksInfo from './TasksInfo.jsx';
 import CallbacksInfo from './CallbacksInfo.jsx';
 import Worker from './Worker.jsx';
+import JobData from './JobData.jsx';
 
 class Jobs extends React.Component {
   render() {
@@ -58,23 +59,43 @@ class Job extends React.Component {
       render() {
         return (
           <div>
-            <h3>{self.state.job.name}</h3>
-            <div>{self.state.job.id}</div>
-            <div>{self.state.job.namespace}</div>
-            <span> Status:</span>
-            <span className = {this.statusFormatter(self.state.job.status)}>
-              {self.state.job.status}
-            </span>
-            <div>{self.state.job.max_retries}</div>
-            <div>{self.state.job.created_at}</div>
-            <div>{self.state.job.updated_at}</div>
-            <div>{self.state.job.uuid}</div>
             <div className="row">
+              <div className="col-xs-12 col-md-8">
+                <div className="panel panel-default">
+                  <div className="panel-heading">Job Info</div>
+                  <div className="panel-body">
+                    <dl className="dl-horizontal">
+                      <dt>Uuid:</dt>
+                      <dd>{self.state.job.uuid}</dd>
+                      <dt>Name:</dt>
+                      <dd>{self.state.job.name}</dd>
+                      <dt>id:</dt>
+                      <dd>{self.state.job.id}</dd>
+                      <dt>Namespace:</dt>
+                      <dd>{self.state.job.namespace}</dd>
+                      <dt>Status:</dt>
+                      <dd>  <span className = {this.statusFormatter(self.state.job.status)}>
+                        {self.state.job.status}
+                      </span></dd>
+                      <dt>Max retries:</dt>
+                      <dd>{self.state.job.max_retries}</dd>
+                      <dt>Created:</dt>
+                      <dd>{self.state.job.created_at}</dd>
+                      <dt>Updated:</dt>
+                      <dd>{self.state.job.updated_at}</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+
               <div className="col-md-4">
                 <TasksInfo tasksValues = {this.state.job.tasks}></TasksInfo>
               </div>
               <div className="col-md-4">
                 <CallbacksInfo callbacksValues = {this.state.job.callbacks}></CallbacksInfo>
+              </div>
+              <div className="col-md-4">
+                <JobData data = {this.state.job.data}></JobData>
               </div>
               <div className="col-md-4">
                 <Worker workerValues = {this.state.job.worker}></Worker>

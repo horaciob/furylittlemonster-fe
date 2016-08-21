@@ -1,6 +1,5 @@
 import React from 'react';
-import TimerMixin from 'react-timer-mixin';
-import { Link } from 'react-router'
+
 
 class Worker extends React.Component {
   render() {
@@ -9,9 +8,9 @@ class Worker extends React.Component {
         <div className="panel-heading">Worker</div>
         <div className="panel-body">
           <ul className = "list-group">
-            <p><i>host: {this.props.workerValues.host}</i></p>
-            <p><i>pid: {this.props.workerValues.pid}</i></p>
-            <p><i>Last Heartbeat: {this.props.workerValues.last_heartbeat}</i></p>
+            <p><i><strong>host:</strong> {this.props.workerValues.host}</i></p>
+            <p><i><strong>pid:</strong> {this.props.workerValues.pid}</i></p>
+            <p><i><strong>Last Heartbeat:</strong> {this.props.workerValues.last_heartbeat}</i></p>
           </ul>
         </div>
       </div>
