@@ -5,6 +5,7 @@ import TasksInfo from './TasksInfo.jsx';
 import CallbacksInfo from './CallbacksInfo.jsx';
 import Worker from './Worker.jsx';
 import JobData from './JobData.jsx';
+import Tags from './Tags.jsx';
 
 class Jobs extends React.Component {
   render() {
@@ -83,6 +84,8 @@ class Job extends React.Component {
                       <dd>{self.state.job.created_at}</dd>
                       <dt>Updated:</dt>
                       <dd>{self.state.job.updated_at}</dd>
+                      <dt>Tags:</dt>
+                      <dd><Tags tagsValues={this.state.job.tags}></Tags></dd>
                     </dl>
                   </div>
                 </div>
