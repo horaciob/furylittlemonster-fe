@@ -27,14 +27,17 @@ class TasksInfo extends React.Component {
 
   render() {
     return (
-      <div className = "container-fluid">
-          <h4>Tasks</h4>
-        <ul className = "list-group">
-          {this.props.tasksValues.sort(this.orderTasks).map((task) =>
-            <li key = {task.id}  className = {this.statusFormatter(task.status)}>
-              {task.name}
-            </li>)}
-          </ul>
+      <div className="panel panel-default">
+        <div className="panel-heading">Tasks</div>
+        <div className="panel-body">
+          <ul className = "list-group">
+            {this.props.tasksValues.sort(this.orderTasks).map((task) =>
+              <li key = {task.id}  className = {this.statusFormatter(task.status)}>
+                {task.name}
+                <span className="badge">{task.retries}</span>
+              </li>)}
+            </ul>
+          </div>
         </div>
       );
     }

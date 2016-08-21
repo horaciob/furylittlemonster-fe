@@ -16,14 +16,16 @@ class CallbacksInfo extends React.Component {
 
   render() {
     return (
-      <div className = "container-fluid">
-        <h4>Callbacks</h4>
-        <ul className = "list-group">
-          {this.props.callbacksValues.sort(this.callbacksValues).map((callback) =>
-            <li key = {callback.id}  className = {this.statusFormatter(callback.status)}>
-              {callback.name}
-            </li>)}
-          </ul>
+      <div className="panel panel-default">
+        <div className="panel-heading">Callbacks</div>
+        <div className="panel-body">
+          <ul className = "list-group">
+            {this.props.callbacksValues.sort(this.callbacksValues).map((callback) =>
+              <li key = {callback.id}  className = {this.statusFormatter(callback.status)}>
+                {callback.name}
+              </li>)}
+            </ul>
+          </div>
         </div>
       );
     }
