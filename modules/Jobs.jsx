@@ -1,6 +1,8 @@
 import React from 'react';
 import TimerMixin from 'react-timer-mixin';
 import { Link } from 'react-router'
+import TasksInfo from './TasksInfo.jsx';
+import CallbacksInfo from './CallbacksInfo.jsx';
 
 class Jobs extends React.Component {
   render() {
@@ -59,16 +61,20 @@ class Job extends React.Component {
             <div>{self.state.job.id}</div>
             <div>{self.state.job.namespace}</div>
             <span> Status:</span>
-            <span className={this.statusFormatter(self.state.job.status)}>
+            <span className = {this.statusFormatter(self.state.job.status)}>
               {self.state.job.status}
             </span>
             <div>{self.state.job.max_retries}</div>
             <div>{self.state.job.created_at}</div>
             <div>{self.state.job.updated_at}</div>
             <div>{self.state.job.uuid}</div>
+            <TasksInfo tasksValues = {this.state.job.tasks}></TasksInfo>
+            <CallbacksInfo callbacksValues = {this.state.job.callbacks}></CallbacksInfo>
           </div>
+
         );
       }
     }
-    export default Job;
-    export default Jobs;
+
+  export default Job;
+  export default Jobs;
