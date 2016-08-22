@@ -3,7 +3,7 @@ var config = {
 
   output: {
     path:'./',
-    filename: 'index.js',
+    filename: 'public/index.min.js',
   },
 
   devServer: {
