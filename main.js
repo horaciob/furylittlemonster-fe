@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './modules/App.jsx';
 import Jobs from './modules/Jobs.jsx';
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 
 ReactDOM.render((
-      <Router history={hashHistory}>
+      <Router history={browserHistory}>
       <Route path="/" component={App}/>
       <Route path="/jobs/:job_id" component={Jobs}/>
       </Router>

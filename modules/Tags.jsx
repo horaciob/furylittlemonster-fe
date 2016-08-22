@@ -8,7 +8,7 @@ class Tags extends React.Component {
       <span>
         <ul className="list-inline">
           {this.props.tagsValues.map((tag) =>
-            <li><span className="label label-default">{Object.keys(tag)[0]}:{tag[Object.keys(tag)[0]]}</span></li>
+            <li><span className="label label-primary">{Object.keys(tag)[0]}:{tag[Object.keys(tag)[0]]}</span></li>
           )}
         </ul>
       </span>
