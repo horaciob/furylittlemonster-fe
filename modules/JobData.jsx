@@ -1,6 +1,5 @@
 import React from 'react';
 import JSONPretty from 'react-json-pretty';
-
 class JobData extends React.Component {
 
   render() {

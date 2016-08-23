@@ -6,6 +6,7 @@ import CallbacksInfo from './CallbacksInfo.jsx';
 import Worker from './Worker.jsx';
 import JobData from './JobData.jsx';
 import Tags from './Tags.jsx';
+import TimeAgo from 'react-timeago'
 
 class Jobs extends React.Component {
   render() {
@@ -57,6 +58,19 @@ class Job extends React.Component {
         }
         return classes[status];
       }
+
+      formattDates(data){
+        var ret;
+        if (typeof data != 'undefined'){
+          ret = new Date(data);
+        }
+        else {
+          ret = new Date(0);
+        }
+        // a = new Date(fechita)
+        return ret
+      }
+
       render() {
         return (
           <div>
@@ -75,15 +89,15 @@ class Job extends React.Component {
                       <dt>Namespace:</dt>
                       <dd>{self.state.job.namespace}</dd>
                       <dt>Status:</dt>
-                      <dd>  <span className = {this.statusFormatter(self.state.job.status)}>
+                      <dd><span className = {this.statusFormatter(self.state.job.status)}>
                         {self.state.job.status}
                       </span></dd>
                       <dt>Max retries:</dt>
                       <dd>{self.state.job.max_retries}</dd>
                       <dt>Created:</dt>
-                      <dd>{self.state.job.created_at}</dd>
+                      <dd><TimeAgo date={this.formattDates(self.state.job.created_at)}/></dd>
                       <dt>Updated:</dt>
-                      <dd>{self.state.job.updated_at}</dd>
+                      <dd><TimeAgo date={this.formattDates(self.state.job.updated_at)}/></dd>
                       <dt>Tags:</dt>
                       <dd><Tags tagsValues={this.state.job.tags}></Tags></dd>
                     </dl>
