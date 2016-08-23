@@ -106,7 +106,7 @@ class Job extends React.Component {
               </div>
 
               <div className="col-md-4">
-                <TasksInfo tasksValues = {this.state.job.tasks}></TasksInfo>
+                <TasksInfo tasksValues = {this.state.job.tasks} jobId={this.state.job.id}></TasksInfo>
               </div>
               <div className="col-md-4">
                 <CallbacksInfo callbacksValues = {this.state.job.callbacks}></CallbacksInfo>
