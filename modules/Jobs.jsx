@@ -95,9 +95,9 @@ class Job extends React.Component {
                       <dt>Max retries:</dt>
                       <dd>{self.state.job.max_retries}</dd>
                       <dt>Created:</dt>
-                      <dd><TimeAgo date={this.formattDates(self.state.job.created_at)}/></dd>
+                      <dd><TimeAgo date={this.formattDates(self.state.job.created_at)} title={self.state.job.created_at}/></dd>
                       <dt>Updated:</dt>
-                      <dd><TimeAgo date={this.formattDates(self.state.job.updated_at)}/></dd>
+                      <dd><TimeAgo date={this.formattDates(self.state.job.updated_at)} title={self.state.job.updated_at}/></dd>
                       <dt>Tags:</dt>
                       <dd><Tags tagsValues={this.state.job.tags}></Tags></dd>
                     </dl>
