@@ -97,7 +97,7 @@ class Job extends React.Component {
               <div className="col-md-4">
                 <CallbacksInfo callbacksValues = {this.state.job.callbacks}></CallbacksInfo>
               </div>
-              <div className="col-md-4">
+              <div className="col-xs-12 col-md-8">
                 <JobData data = {this.state.job.data}></JobData>
               </div>
               <div className="col-md-4">

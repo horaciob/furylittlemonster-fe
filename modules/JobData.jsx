@@ -1,4 +1,5 @@
 import React from 'react';
+import JSONPretty from 'react-json-pretty';
 
 class JobData extends React.Component {
 
@@ -8,7 +9,7 @@ class JobData extends React.Component {
         <div className="panel-heading">Data</div>
         <div className="panel-body">
           <ul className = "list-group">
-            {JSON.stringify(this.props.data.outputs,null,2)}
+            <JSONPretty id="json-pretty" json={this.props.data.outputs}></JSONPretty>
             </ul>
           </div>
         </div>
